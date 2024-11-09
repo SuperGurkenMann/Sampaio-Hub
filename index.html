@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Sampaio's Pastel 90s Hub!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Password Checker for Cool Zone
+        // Password Checker for Cool Zone
+        function checkPassword() {
+            var password = prompt("Enter the Secret Password to Access the Cool Zone:");
+
+            // Sanitize input by removing potential harmful characters
+            var sanitizedPassword = password.replace(/[<>"'\/\\]/g, '');
+
+            // Check if sanitized password matches
+            if (sanitizedPassword === "Sampaio") {
+                document.getElementById("cool-zone").style.display = "block";
+            } else {
+                alert("WRONG PASSWORD! Try again.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    
+    <div class="image-overlay-container">
+        <audio id="bgm" loop>
+            <source src="assets/bgm.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+          </audio>
+        
+          <!-- Mute button -->
+          <button id="muteButton">Mute</button>
+  <!-- Audio element with autoplay and loop -->
+
+        <!-- Flashing Header -->
+        <h1>Welcome to Sampaio's Pastel 90s Hub!!!</h1>
+
+        <!-- Marquee Scrolling Text -->
+        <div class="marquee">
+            <marquee>WELCOME TO THE ULTIMATE PASTEL 90s HUB! CHECK OUT ALL THE COOL LINKS BELOW!</marquee>
+        </div>
+
+        <!-- Flexbox Container for Responsive Design -->
+        <div class="container">
+            <!-- About Me Section with Steckbrief -->
+            <div class="content-box">
+                <h2>About Me - Steckbrief</h2>
+                <p>Hello! I'm Sampaio. I love all things from the 90s, gaming, and retro tech.</p>
+                <div class="steckbrief">
+                    <p><strong>Name:</strong> Sampaio</p>
+                    <p><strong>Hobbies:</strong> Gaming, retro tech collecting, meme watching</p>
+                    <p><strong>Favorite 90s Shows:</strong> Friends, The Fresh Prince of Bel-Air</p>
+                    <p><strong>Favorite Game:</strong> Super Mario 64</p>
+                </div>
+                <p><img src="pastel-avatar.png" alt="Pastel avatar of Sampaio" width="100"></p>
+            </div>
+
+            <!-- Funny Image Section -->
+            <div class="content-box image-section">
+                <h2>Funny 90s Image</h2>
+                <img src="funny-90s-image.jpg" alt="Funny 90s Image">
+            </div>
+
+            <!-- Music Section -->
+            <div class="content-box music-section">
+                <h2>90s Music</h2>
+                <p>Listen to some classic 90s tunes while you explore:</p>
+                <embed src="your-music-file.mid" autostart="true" loop="true" hidden="true">
+            </div>
+
+            <!-- Video Section -->
+            <div class="content-box video-section">
+                <h2>Funny 90s Video</h2>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <!-- Server Access Links Section -->
+            <div class="content-box">
+                <h2>Server Access Links</h2>
+                <a href="minecraft-server-link.html" class="jump-button">
+                    <img src="floppy-icon.png" alt="Minecraft" width="20"> Minecraft Server
+                </a>
+                <a href="jellyfin-link.html" class="jump-button">
+                    <img src="smiley-icon.png" alt="Jellyfin" width="20"> Jellyfin Media
+                </a>
+                <a href="calibre-link.html" class="jump-button">
+                    <img src="heart-icon.png" alt="Calibre" width="20"> Calibre Library
+                </a>
+                <a href="custom-link.html" class="jump-button">
+                    <img src="star-icon.png" alt="Custom" width="20"> Custom App
+                </a>
+                <!-- Password Protected Zone Button -->
+                <p>Click <button class="jump-button" onclick="checkPassword()"><img src="lock-icon.png" alt="Lock"
+                            width="20"> Secret Cool Zone</button> for more!</p>
+            </div>
+        </div>
+
+        <!-- Hidden Cool Zone Content -->
+        <div id="cool-zone" class="hidden-content">
+            <h2>Welcome to the Secret Cool Zone!</h2>
+            <ul>
+                <li><a href="link1.html" target="_blank">Hidden Pastel GIFs Gallery</a></li>
+                <li><a href="link2.html" target="_blank">MIDI Music Collection</a></li>
+                <li><a href="link3.html" target="_blank">Private Chat Room</a></li>
+            </ul>
+        </div>
+
+        <!-- Visitor Counter -->
+        <p>Visitor Counter:
+        </p>
+        <img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=1163&s=1' border='0' style="scale: 1.2" alt='Website Hit Counter'>
+
+        <script>
+            // Get the audio element and mute button
+            const audio = document.getElementById('bgm');
+            const muteButton = document.getElementById('muteButton');
+        
+            // Play the audio when the user clicks anywhere on the page
+            document.body.addEventListener('click', () => {
+              if (audio.paused) {
+                audio.play(); // Start playing the audio
+                muteButton.style.display = 'inline'; // Show the mute button after playing
+              }
+            });
+        
+            // Mute/unmute functionality
+            muteButton.addEventListener('click', () => {
+              if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+              } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+              }
+            });
+          </script>
+</body>
+
+</html>
